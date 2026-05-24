@@ -1,0 +1,8 @@
+Files available in _source_assets/ — use these for logo and favicon:
+ASSETS_LIST.txt
+IHK_Logo_geschnitten.svg
+WMC_Logo_Schriftzug IT_schwarz.svg
+favicon.ico
+favicon.svg
+logo.svg
+made-in-germany-sign.svg
