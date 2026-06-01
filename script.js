@@ -69,8 +69,9 @@
     html.setAttribute('data-theme', theme);
     var moon = document.getElementById('icon-moon');
     var sun = document.getElementById('icon-sun');
-    if (moon) moon.style.display = theme === 'dark' ? 'block' : 'none';
-    if (sun) sun.style.display = theme === 'light' ? 'block' : 'none';
+    /* Use classList.toggle so Tailwind's `hidden` (display:none !important) is properly removed */
+    if (moon) moon.classList.toggle('hidden', theme !== 'dark');
+    if (sun) sun.classList.toggle('hidden', theme !== 'light');
   }
 
   /* ─── iPhone Screen Cycle ─────────────────────────── */

@@ -24,7 +24,7 @@
   --text-4:   #9ca3af;
   --text-5:   #d1d5db;
   --glass-bg:      rgba(255,255,255,0.78);
-  --glass-border:  rgba(255,255,255,0.55);
+  --glass-border:  rgba(0,0,0,0.08);
   --panel-bg:      rgba(255,255,255,0.85);
   --panel-subtle:  rgba(0,0,0,0.03);
   --dark-bg:       #070b14;
@@ -540,19 +540,13 @@ body {
   background: var(--bg);
   color: var(--text-1);
   font-size: .875rem;
+  font-family: inherit;
   outline: none;
   transition: border-color .15s;
 }
 .modal-input:focus { border-color: #6366f1; }
 
-/* ─── Nav scrolled ────────────────────────────────── */
-.nav-scrolled {
-  background: rgba(7,11,20,.92) !important;
-  backdrop-filter: blur(16px) !important;
-  border-bottom: 1px solid rgba(255,255,255,.08) !important;
-}
-
-/* ─── Primary button ──────────────────────────────── */
+/* ─── Nav scrolled (light-mode aware) ─────────────── */
 .btn-primary {
   display: inline-flex; align-items: center; justify-content: center;
   padding: 12px 24px;
@@ -566,3 +560,27 @@ body {
   text-decoration: none;
 }
 .btn-primary:hover { opacity: .9; transform: translateY(-1px); }
+
+/* ─── Light mode: scrolled nav overrides ──────────── */
+[data-theme="light"] #nav.nav-scrolled {
+  background: var(--surface-nav) !important;
+  backdrop-filter: blur(20px) !important;
+  box-shadow: 0 1px 0 var(--border) !important;
+  border-bottom: none !important;
+}
+[data-theme="light"] #nav.nav-scrolled .nav-logo-text { color: var(--text-1); }
+[data-theme="light"] #nav.nav-scrolled .nav-pill {
+  background: rgba(0,0,0,0.04);
+  border-color: var(--border-strong);
+}
+[data-theme="light"] #nav.nav-scrolled .nav-pill a {
+  color: var(--text-2);
+}
+[data-theme="light"] #nav.nav-scrolled .nav-pill a:hover {
+  color: var(--text-1);
+  background: rgba(0,0,0,0.05);
+}
+[data-theme="light"] #nav.nav-scrolled #mobile-menu-btn span {
+  background: var(--text-2);
+}
+
