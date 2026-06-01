@@ -1,0 +1,1 @@
+﻿{"name":"procon-landing-page","version":"1.0.0","private":true,"scripts":{"lint":"htmlhint *.html","test:validate":"node tests/validate.js","test":"npm run test:validate","build":"echo No build step required"},"devDependencies":{"htmlhint":"^1.9.2"}}
